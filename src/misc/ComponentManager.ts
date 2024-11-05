@@ -17,6 +17,8 @@ export class ComponentManager {
                 return new CCLabelModel();
             case 'cc.Sprite':
                 return new CCSpriteModel();
+            case 'cc.RichText':
+                return new CCRichTextModel();
             default:
                 return null
         }
@@ -95,6 +97,17 @@ class CCSpriteModel implements IComponentViewModel {
 
     props: IComponentProp[] = [
         { name: 'Color', key: 'color' },
+    ];
+
+}
+
+class CCRichTextModel implements IComponentViewModel {
+    props: IComponentProp[] = [
+        { name: 'String', key: 'string' },
+        { name: 'Color', key: 'color' },
+        { name: 'Font Size', key: 'fontSize' },
+        { name: 'Line Height', key: 'lineHeight' },
+        { name: 'Max Width', key: 'maxWidth' },
     ];
 
 }
